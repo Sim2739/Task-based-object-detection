@@ -34,7 +34,7 @@ except FileNotFoundError:
     print("Computed and saved class embeddings")
 
 # ── 4. Define your task ─────────────────────────────────────────
-task = "pick up a drink"
+task = "get lemon out of tea"
 
 # ── 5. Embed the task and compute similarity to all 80 classes ──
 task_embedding = sbert.encode(task)
@@ -49,7 +49,7 @@ print(f"\nTask: '{task}'")
 print(f"Relevant classes (similarity > {THRESHOLD}): {relevant_classes}")
 
 # ── 7. Run YOLO with only relevant classes ──────────────────────
-image_path = 'image.jpg'
+image_path ='image.jpg'
 results = yolo(image_path, classes=relevant_indices.tolist())
 
 # ── 8. Compute combined score for each detection ────────────────
